@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AWS System Monitor</title>
+
+    <meta http-equiv="refresh" content="5">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .value {
+            font-size: 35px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .bar {
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #2563eb;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>AWS System Monitor</h1>
+    <p>EC2 Server Monitoring Dashboard</p>
+</div>
+
+<div class="container">
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>CPU Usage</h2>
+            <div class="value">{{ cpu }}%</div>
+
+            <div class="bar">
+                <div class="progress" style="width: {{ cpu }}%;"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Memory Usage</h2>
+            <div class="value">{{ memory }}%</div>
+
+            <p>{{ memory_used }} GB / {{ memory_total }} GB</p>
+
+            <div class="bar">
+                <div class="progress" style="width: {{ memory }}%;"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Disk Usage</h2>
+            <div class="value">{{ disk }}%</div>
+
+            <p>{{ disk_used }} GB / {{ disk_total }} GB</p>
+
+            <div class="bar">
+                <div class="progress" style="width: {{ disk }}%;"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Server Uptime</h2>
+            <div class="value">{{ uptime }}</div>
+            <p>Since application start</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        AWS Minor Project | EC2 System Monitoring Dashboard
+        <br>
+        Auto-refreshes every 5 seconds
+    </div>
+
+</div>
+
+</body>
+</html><!DOCTYPE html>
+<html>
+<head>
+    <title>AWS System Monitor</title>
+
+    <meta http-equiv="refresh" content="5">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+        }
+
+        .header {
+            background: #111827;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 18px;
+        }
+
+        .value {
+            font-size: 35px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .bar {
+            height: 12px;
+            background: #e5e7eb;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+            background: #2563eb;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>AWS System Monitor</h1>
+    <p>EC2 Server Monitoring Dashboard</p>
+</div>
+
+<div class="container">
+
+    <div class="cards">
+
+        <div class="card">
+            <h2>CPU Usage</h2>
+            <div class="value">{{ cpu }}%</div>
+
+            <div class="bar">
+                <div class="progress" style="width: {{ cpu }}%;"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Memory Usage</h2>
+            <div class="value">{{ memory }}%</div>
+
+            <p>{{ memory_used }} GB / {{ memory_total }} GB</p>
+
+            <div class="bar">
+                <div class="progress" style="width: {{ memory }}%;"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Disk Usage</h2>
+            <div class="value">{{ disk }}%</div>
+
+            <p>{{ disk_used }} GB / {{ disk_total }} GB</p>
+
+            <div class="bar">
+                <div class="progress" style="width: {{ disk }}%;"></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Server Uptime</h2>
+            <div class="value">{{ uptime }}</div>
+            <p>Since application start</p>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        AWS Minor Project | EC2 System Monitoring Dashboard
+        <br>
+        Auto-refreshes every 5 seconds
+    </div>
+
+</div>
+
+</body>
+</html>
